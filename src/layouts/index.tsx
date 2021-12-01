@@ -2,11 +2,18 @@ import React from 'react';
 interface AppProps {
   value?: string;
 }
-const LayIndex: React.FC<AppProps> = (props: AppProps)=> {
+export default function (props: any) {
+  console.log('--------');
+  console.log(props);
+  if (props.location.pathname === '/login') {
+    return <div>{props.children}</div>;
+  }
+
   return (
-    <div className=''>
-      111
-    </div>
+    <>
+      <div />
+      {props.children}
+      <div />
+    </>
   );
-};
-export default LayIndex;
+}
